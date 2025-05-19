@@ -38,7 +38,7 @@ namespace JayFastLib.collection.stack
 
         public T Pop()
         {
-            T firstOut = Peek();
+            T kast = Peek();
             if(tail == head)
             {
                 tail = null;
@@ -50,7 +50,7 @@ namespace JayFastLib.collection.stack
                 tail = tail.Prev;
                 tail.Next = null;
             }
-            return firstOut;
+            return kast;
         }
 
         public bool IsEmpty()
