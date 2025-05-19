@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Jay\\Documents\\projects\\c#\\c-sharp-fast-collections\\JayFastLib\\JayFastLib\\JayFastLib.csproj",
+      "projectUniqueName": "C:\\Users\\Jay\\Documents\\projects\\c++\\JayFastLib\\JayFastLib\\JayFastLib.csproj",
       "projectName": "JayFastLib",
-      "projectPath": "C:\\Users\\Jay\\Documents\\projects\\c#\\c-sharp-fast-collections\\JayFastLib\\JayFastLib\\JayFastLib.csproj",
+      "projectPath": "C:\\Users\\Jay\\Documents\\projects\\c++\\JayFastLib\\JayFastLib\\JayFastLib.csproj",
       "packagesPath": "C:\\Users\\Jay\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Jay\\Documents\\projects\\c#\\c-sharp-fast-collections\\JayFastLib\\JayFastLib\\obj\\",
+      "outputPath": "C:\\Users\\Jay\\Documents\\projects\\c++\\JayFastLib\\JayFastLib\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
