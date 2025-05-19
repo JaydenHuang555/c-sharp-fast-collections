@@ -9,7 +9,7 @@ namespace External
         {
             string s = "";
             JayFastLib.collection.stack.Stack<string?> stack = new JayFastLib.collection.stack.Stack<string?>();
-            while(!s.Equals("test"))
+            while(!s?.Equals("test"))
             {
                 stack.Push((s = Console.ReadLine()));
             }
