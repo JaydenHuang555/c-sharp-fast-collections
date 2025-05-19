@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 
 namespace JayFastLib.collection.list.orderedlist
 {
-    unsafe public class OrderedList<T> : IList<T> where T : unmanaged
+    unsafe public class OrderedList<T>  : IDisposable, IEnumerable<T>
     {
-        T IList<T>.this[int index] { get => _buffer[index]; set => _buffer[index] = value; }
+        public T this[int index] { get => _buffer[index]; set => _buffer[index] = value; }
 
-        int IList<T>.Count { get => _count; set => _count = value; }
+        public int Count { get; private set; }
 
         private int _count, _cap;
         private bool _disposed;
@@ -40,11 +40,14 @@ namespace JayFastLib.collection.list.orderedlist
 
         public void Clear()
         {
+            _count = 0;
         }
 
-        public bool Contains(T item)
+        public bool Contains(T target)
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < Count; i++)
+                if (_buffer[i].Equals(target)) return true;
+            return false;
         }
 
         public void Dispose()
@@ -56,14 +59,17 @@ namespace JayFastLib.collection.list.orderedlist
             }
         }
 
+        // TODO: IMPLEMENT THESE METHODS
+
         public IEnumerator<T> GetEnumerator()
         {
-            throw new NotImplementedException();
+            return new OrderedListEnumerator<T>(this);
         }
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            throw new NotImplementedException();
+            return new OrderedListEnumerator<T>(this);
         }
+
     }
 }
