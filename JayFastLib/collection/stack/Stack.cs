@@ -8,24 +8,42 @@ using JayFastLib.collection.entryutil;
 
 namespace JayFastLib.collection.stack
 {
-    unsafe public class Stack<T>
+    unsafe public class Stack<T> : IDisposable
     {
 
         private UnsafeSingleSnakeEntry<T>* head, tail;
 
-        public Stack() { }
+        public bool Disposed { get; private set; }
+
+        public Stack() 
+        {
+            Disposed = false;
+        }
 
         ~Stack()
         {
-            UnsafeSingleSnakeEntry<T>* entry = tail;
-            while(entry != null)
+            Dispose();
+        }
+
+        public void Dispose()
+        {
+            if(!Disposed)
             {
-                if (entry->Next != null)
+                UnsafeSingleSnakeEntry<T>* entry = head;
+                while(entry != null)
                 {
-                    entry = entry->Next;
-                    Marshal.FreeHGlobal((IntPtr)entry->Prev);
+                    if(entry->Next != null)
+                    {
+                        entry = entry->Next;
+                        Marshal.FreeHGlobal((IntPtr)entry->Prev);
+                    }
+                    else
+                    {
+                        Marshal.FreeHGlobal((IntPtr)entry);
+                    }
                 }
-                else Marshal.FreeHGlobal((IntPtr)entry);
+                GC.SuppressFinalize(this);
+                Disposed = true;
             }
         }
 
@@ -54,7 +72,7 @@ namespace JayFastLib.collection.stack
 
         public T Pop()
         {
-            T kast = Peek();
+            T lastIn = Peek();
             if(tail == head)
             {
                 tail = null;
@@ -66,7 +84,7 @@ namespace JayFastLib.collection.stack
                 tail = tail->Prev;
                 tail->Next = null;
             }
-            return kast;
+            return lastIn;
         }
 
         public bool IsEmpty()
