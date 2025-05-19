@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using JayFastLib.collection.entryutil;
@@ -10,30 +11,45 @@ namespace JayFastLib.collection.stack
     unsafe public class Stack<T>
     {
 
-        private SingleSnakeEntry<T>? head, tail;
+        private UnsafeSingleSnakeEntry<T>* head, tail;
 
         public Stack() { }
 
+        ~Stack()
+        {
+            UnsafeSingleSnakeEntry<T>* entry = tail;
+            while(entry != null)
+            {
+                if (entry->Next != null)
+                {
+                    entry = entry->Next;
+                    Marshal.FreeHGlobal((IntPtr)entry->Prev);
+                }
+                else Marshal.FreeHGlobal((IntPtr)entry);
+            }
+        }
+
         public void Push(T item)
         {
-            SingleSnakeEntry<T> nextEntry = new SingleSnakeEntry<T>(item);
+            UnsafeSingleSnakeEntry<T>* entry = (UnsafeSingleSnakeEntry<T>*)Marshal.AllocHGlobal(sizeof(UnsafeSingleSnakeEntry<T>));
+            entry->Item = item;
             if(head == null)
             {
-                head = nextEntry;
-                tail = nextEntry;
+                head = entry;
+                tail = entry;
             }
-            else if(tail != null) // null condition to avoid warning
+            else if(tail != null)
             {
-                tail.Next = nextEntry;
-                tail.Next.Prev = tail;
-                tail = tail.Next;
+                tail->Next = entry;
+                tail->Next->Prev = entry;
+                tail = tail->Next;
             }
         }
 
         public T Peek()
         {
             if (IsEmpty() || tail == null) throw new SystemException("peeking empty stack");
-            return tail.Item;
+            return tail->Item;
         }
 
         public T Pop()
@@ -47,8 +63,8 @@ namespace JayFastLib.collection.stack
             else
             {
                 if (tail == null) throw new SystemException("SOMETHING WENT WRONG WITH STACK");
-                tail = tail.Prev;
-                tail.Next = null;
+                tail = tail->Prev;
+                tail->Next = null;
             }
             return kast;
         }
