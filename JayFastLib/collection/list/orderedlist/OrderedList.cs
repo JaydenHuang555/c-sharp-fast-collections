@@ -8,7 +8,13 @@ namespace JayFastLib.collection.list.orderedlist
     {
         public T this[int index] { get => _buffer[index]; set => _buffer[index] = value; }
 
-        public int Count { get; private set; }
+        public int Count
+        {
+            get
+            {
+                return _count;
+            }
+        }
 
         private int _count, _cap;
         private bool _disposed;

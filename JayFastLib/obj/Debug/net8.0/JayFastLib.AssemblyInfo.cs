@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("JayFastLib")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+58c5473bfcc6a47332210aba0bea1ccf4edf577a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+156a1b558a4e7246d3f8bc1c17d22f97420cd016")]
 [assembly: System.Reflection.AssemblyProductAttribute("JayFastLib")]
 [assembly: System.Reflection.AssemblyTitleAttribute("JayFastLib")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

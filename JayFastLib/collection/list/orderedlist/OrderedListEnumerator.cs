@@ -17,7 +17,7 @@ namespace JayFastLib.collection.list.orderedlist
             this.Buffed = list;
         }
 
-        public T Current => Buffed[_off];
+        public T Current => Buffed[_off++];
 
         object IEnumerator.Current => Current;
 
@@ -27,7 +27,7 @@ namespace JayFastLib.collection.list.orderedlist
 
         public bool MoveNext()
         {
-            return _off++ < Buffed.Count;
+            return _off < Buffed.Count;
         }
 
         public void Reset()

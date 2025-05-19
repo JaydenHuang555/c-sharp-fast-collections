@@ -1,0 +1,15 @@
+C:\Users\Jay\Documents\projects\c++\JayFastLib\JayFastLib\obj\Debug\net8.0\JayFastLib.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jay\Documents\projects\c++\JayFastLib\JayFastLib\obj\Debug\net8.0\JayFastLib.AssemblyInfoInputs.cache
+C:\Users\Jay\Documents\projects\c++\JayFastLib\JayFastLib\obj\Debug\net8.0\JayFastLib.AssemblyInfo.cs
+C:\Users\Jay\Documents\projects\c++\JayFastLib\JayFastLib\obj\Debug\net8.0\JayFastLib.csproj.CoreCompileInputs.cache
+C:\Users\Jay\Documents\projects\c++\JayFastLib\JayFastLib\obj\Debug\net8.0\JayFastLib.sourcelink.json
+C:\Users\Jay\Documents\projects\c++\JayFastLib\JayFastLib\bin\Debug\net8.0\JayFastLib.exe
+C:\Users\Jay\Documents\projects\c++\JayFastLib\JayFastLib\bin\Debug\net8.0\JayFastLib.deps.json
+C:\Users\Jay\Documents\projects\c++\JayFastLib\JayFastLib\bin\Debug\net8.0\JayFastLib.runtimeconfig.json
+C:\Users\Jay\Documents\projects\c++\JayFastLib\JayFastLib\bin\Debug\net8.0\JayFastLib.dll
+C:\Users\Jay\Documents\projects\c++\JayFastLib\JayFastLib\bin\Debug\net8.0\JayFastLib.pdb
+C:\Users\Jay\Documents\projects\c++\JayFastLib\JayFastLib\obj\Debug\net8.0\JayFastLib.dll
+C:\Users\Jay\Documents\projects\c++\JayFastLib\JayFastLib\obj\Debug\net8.0\refint\JayFastLib.dll
+C:\Users\Jay\Documents\projects\c++\JayFastLib\JayFastLib\obj\Debug\net8.0\JayFastLib.pdb
+C:\Users\Jay\Documents\projects\c++\JayFastLib\JayFastLib\obj\Debug\net8.0\JayFastLib.genruntimeconfig.cache
+C:\Users\Jay\Documents\projects\c++\JayFastLib\JayFastLib\obj\Debug\net8.0\ref\JayFastLib.dll
