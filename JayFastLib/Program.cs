@@ -1,4 +1,5 @@
 ﻿using JayFastLib.collection.list.orderedlist;
+using JayFastLib.collection.stack;
 
 namespace External
 {
@@ -6,11 +7,13 @@ namespace External
     {
         static void Main(string[] args)
         {
-            OrderedList<string> li = new OrderedList<string>();
-            li.Add("1");
-            li.Add("2");
-            Console.WriteLine("Cound: " + li.Count);
-            foreach(string str in li) Console.WriteLine(str);
+            string s = "";
+            JayFastLib.collection.stack.Stack<string?> stack = new JayFastLib.collection.stack.Stack<string?>();
+            while(!s.Equals("test"))
+            {
+                stack.Push((s = Console.ReadLine()));
+            }
+            while(!stack.IsEmpty()) Console.WriteLine(stack.Pop());
         }
     }
 }
