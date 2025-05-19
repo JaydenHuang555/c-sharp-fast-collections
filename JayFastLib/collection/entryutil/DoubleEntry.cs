@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace JayFastLib.collection.entryutil
 {
     public class DoubleEntry<T1, T2> : Entry<T1>
