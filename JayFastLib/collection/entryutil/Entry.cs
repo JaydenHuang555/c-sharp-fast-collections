@@ -11,10 +11,7 @@ namespace JayFastLib.collection.entryutil
 
         public T? Item;
 
-        public Entry(T? item)
-        {
-            Item = item;
-        }
+        public Entry(T? item) => Item = item;
 
     }
 }

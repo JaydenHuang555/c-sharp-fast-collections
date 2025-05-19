@@ -12,9 +12,6 @@ namespace JayFastLib.collection.entryutil
         public SingleSnakeEntry<T>? Prev, Next;
         public T Item;
 
-        public SingleSnakeEntry(T? item) : base(item);
-        {
-        }
-
+        public SingleSnakeEntry(T? item) : base(item) {}
     }
 }

@@ -11,8 +11,6 @@ namespace JayFastLib.collection.entryutil
 
         public SingleIncreasingEntry<T>? Next;
 
-        public SingleIncreasingEntry(T item) : base(item)
-        {
-        }
+        public SingleIncreasingEntry(T? item) : base(item) {}
     }
 }

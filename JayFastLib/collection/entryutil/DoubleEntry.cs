@@ -12,10 +12,7 @@ namespace JayFastLib.collection.entryutil
         public T1? First { get => Item; }
         public T2? Second;
 
-        public DoubleEntry(T1? first, T2? second) : base(first)
-        {
-            Second = second;
-        }
+        public DoubleEntry(T1? first, T2? second) : base(first) => Second = second;
 
     }
 }

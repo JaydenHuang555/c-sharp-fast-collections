@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace JayFastLib.collection.entryutil
 {
-    internal class SingleDecreasingEntry
+    public class SingleDecreasingEntry<T> : Entry<T>
     {
+
+        public SingleDecreasingEntry<T> Prev;
+
+        public SingleDecreasingEntry(T? item) : base(item) {}
+
     }
 }
