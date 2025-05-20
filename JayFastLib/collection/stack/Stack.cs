@@ -49,7 +49,8 @@ namespace JayFastLib.collection.stack
 
         public void Push(T item)
         {
-            UnsafeSingleSnakeEntry<T>* entry = (UnsafeSingleSnakeEntry<T>*)Marshal.AllocHGlobal(sizeof(UnsafeSingleSnakeEntry<T>));
+            UnsafeSingleSnakeEntry<T>* entry = (UnsafeSingleSnakeEntry<T>*)Marshal.AllocHGlobal((sizeof(UnsafeSingleSnakeEntry<T>)));
+            entry->Alloc();
             entry->Item = item;
             if(head == null)
             {

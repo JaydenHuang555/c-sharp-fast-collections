@@ -14,5 +14,12 @@ namespace JayFastLib.collection.entryutil
         public UnsafeSingleSnakeEntry(T? item) : base(item)
         {
         }
+
+        public void Alloc()
+        {
+            Prev = null;
+            Next = null;
+        }
+
     }
 }
